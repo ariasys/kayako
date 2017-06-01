@@ -1,0 +1,28 @@
+kayako-db:
+ image: mariadb
+ container_name: kayako-db
+ volumes:
+  - ./mysql:/var/lib/mysql
+ environment:
+  - SET_CONTAINER_TIMEZONE=true
+  - CONTAINER_TIMEZONE=America/Sao_Paulo
+ env_file:
+  - ./mysql.env
+ restart: always
+kayako-app:
+ image: kayako
+ container_name : kayako-app
+ volumes:
+  - ./public_html:/usr/share/nginx/html
+  - ./conf:/etc/nginx/external
+  - ./backups:/backups
+ links:
+  - kayako-db:kayako.db
+ ports:
+  - "80:80"
+  - "443:443"
+ environment:
+  - SET_CONTAINER_TIMEZONE=true
+  - CONTAINER_TIMEZONE=America/Sao_Paulo
+ tty: true
+ restart: always
