@@ -1,5 +1,5 @@
 # Kayako Help Desk Container (based on marvambass/nginx-ssl-php)
-_maintained by AriaSys_
+_maintained by AriaSys Technology_
 
 [FAQ - All you need to know about the marvambass Containers](https://marvin.im/docker-faq-all-you-need-to-know-about-the-marvambass-containers/)
 
