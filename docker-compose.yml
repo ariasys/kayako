@@ -1,3 +1,4 @@
+# Banco de Dados
 kayako-db:
  image: mariadb
  container_name: kayako-db
@@ -9,8 +10,10 @@ kayako-db:
  env_file:
   - ./mysql.env
  restart: always
+
+# Kayako
 kayako-app:
- image: kayako
+ image: ariasys/kayako
  container_name : kayako-app
  volumes:
   - ./public_html:/usr/share/nginx/html
